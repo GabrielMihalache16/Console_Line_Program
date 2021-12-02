@@ -1,7 +1,20 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
-public class LogicalOperation {public List<Integer> getPopulatedList(int max) {
+public class LogicalOperation {
+    Messages msg = new Messages();
+
+    public int[] populateArray(int x){
+        int[] myArr = new int[x];
+        for (int i = 0; i < x; i++){
+            myArr[i] = i + 1;
+        }
+        return myArr;
+    }
+
+    public List<Integer> getPopulatedList(int max) {
     List<Integer> myList = new ArrayList<>();
     for (int i = 1; i <= max; i++) {
         myList.add(i);
@@ -138,31 +151,15 @@ public class LogicalOperation {public List<Integer> getPopulatedList(int max) {
         return x;
     }
 
-//    public List<Integer> sortareLista(int x, int y, int z){
-//        List<Integer> myList = new ArrayList<>();
-//        myList.add(x);
-//        myList.add(y);
-//        myList.add(z);
-//        int temp;
-//        int temp2;
-//        int var;
-//        int var2;
-//
-//
-//        for (int i = 0; i < myList.size(); i++){
-//            for (int j = i+1; j < myList.size(); j++){
-//                temp = myList.get(i);
-//                temp2 = myList.get(j);
-//                if (temp > temp2){
-//                    var = temp;
-//                    var2 = temp2;
-//                    myList.add(i, temp2);
-//                    myList.add(j, var);
-//                    myList.remove(i+1);
-//                    myList.remove(j+1);
-//                }
-//            }
-//        }
-//        return myList;
-//    }
+
+    public void getPositionValue(int[] x, int y){
+            try{
+                System.out.println(x[y]);
+            }
+            catch(ArrayIndexOutOfBoundsException error){
+                System.out.println("Inside catch, number too large");
+            }
+    }
+
+
 }
